@@ -18,8 +18,8 @@ Managing data is necessary for the stateful applications even though container d
    ```
 1. Delete jenkins container 
    ```sh
-   docker stop vtjenkinstest01
-   docker rm vtjenkinstest01
+   docker stop myjenkinscontainer 
+   docker rm myjenkinscontainer 
    ```
 
 1. Create a new container with existing volume. 
@@ -36,7 +36,7 @@ Managing data is necessary for the stateful applications even though container d
    ```
 1. Create jenkins server using above directory
    ```sh 
-   docker run --name vtjenkinsprd01 -p 9000:8080 -p 60000:50000 -v /opt/jenkins:/var/jenkins_home jenkins
+   docker run --name myjenkinscontainer -p 9000:8080 -p 60000:50000 -v /opt/jenkins:/var/jenkins_home jenkins
    ```
 
 1. Check for the jenkins data under /opt/jenkins
