@@ -1,0 +1,4 @@
+docker-compose up -d
+docker-compose down (this command also kills the containers but we dont want that, so inorder sto just stop run )
+docker-compose stop/ docker-compose -f mango-services.yaml stop
+docker-compose -f mango-services.yaml start
