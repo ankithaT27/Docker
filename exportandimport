@@ -1,0 +1,4 @@
+docker export containername > outputfile.tar
+This command exports the conatiner as a tar file
+
+docker import outputfile.tar new_imagename
