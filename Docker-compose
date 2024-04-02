@@ -2,3 +2,34 @@ docker-compose up -d
 docker-compose down (this command also kills the containers but we dont want that, so inorder sto just stop run )
 docker-compose stop/ docker-compose -f mango-services.yaml stop
 docker-compose -f mango-services.yaml start
+
+******************************************************************************************************************************************************************************
+
+Swarm 
+orchestration tool consists of mutiple hosts
+worker node
+master node -  is responsible for the allocation of the task, dispatch the tasks, and schedule the tasks.
+ommunicate with each other by using the HTTP protocol. 
+
+Initialize a master:
+docker swarm init --> token is generated can be used with worker using docker join --token
+docker node ls --> used to check if node is active
+
+******************************************************************************************************************************************************************************
+
+Create a service:
+
+docker service create --name  nginxservice -p 80:80 nginx
+docker service ls
+docker service rm servicename
+scaling--> docker service scale nginxservice=5
+
+******************************************************************************************************************************************************************************
+
+stack
+
+docker stack deploy -c compose.yaml myfirststack
+                  or
+docker stack deploy --composefile.yaml myfirststack
+docker stack services myfirststack
+docker stack rm stackname
